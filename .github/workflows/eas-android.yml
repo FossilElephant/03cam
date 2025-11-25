@@ -19,14 +19,8 @@ jobs:
           npm ci
           npm install -g eas-cli
 
-      - name: Configure EAS token
+      - name: Run EAS build (Android - preview)
         env:
-          EAS_TOKEN: ${{ secrets.EAS_TOKEN }}
-        run: |
-          echo "EAS_TOKEN configured"
-
-      - name: Start EAS build (Android - preview)
-        env:
-          EAS_TOKEN: ${{ secrets.EAS_TOKEN }}
+          EXPO_TOKEN: ${{ secrets.EXPO_TOKEN }}
         run: |
           eas build --platform android --profile preview --non-interactive
