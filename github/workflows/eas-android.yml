@@ -1,0 +1,32 @@
+name: EAS Build Android (manual)
+
+on:
+  workflow_dispatch:
+
+jobs:
+  eas-build-android:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 18
+
+      - name: Install dependencies & EAS CLI
+        run: |
+          npm ci
+          npm install -g eas-cli
+
+      - name: Configure EAS token
+        env:
+          EAS_TOKEN: ${{ secrets.EAS_TOKEN }}
+        run: |
+          echo "EAS_TOKEN configured"
+
+      - name: Start EAS build (Android - preview)
+        env:
+          EAS_TOKEN: ${{ secrets.EAS_TOKEN }}
+        run: |
+          eas build --platform android --profile preview --non-interactive
