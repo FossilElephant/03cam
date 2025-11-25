@@ -1,0 +1,8 @@
+Update app to save photos without storage permission and remove Expo Go references
+
+Fixes: Removed storage permission requirement for saving photos, updated all "Expo Go" references to "03cam", and simplified the permission flow to only require camera permission. Also addresses Skia runtime errors by simplifying effects application.
+Replit-Commit-Author: Agent
+Replit-Commit-Session-Id: eceeb7cf-5cd6-4a2f-883f-bb88262484ca
+Replit-Commit-Checkpoint-Type: full_checkpoint
+Replit-Commit-Event-Id: 17bbb702-98dc-47eb-b010-266132c0db10
+Replit-Commit-Screenshot-Url: https://storage.googleapis.com/screenshot-production-us-central1/a8681e8a-a1fc-486d-982a-63be1686d3ff/eceeb7cf-5cd6-4a2f-883f-bb88262484ca/i82dveI
